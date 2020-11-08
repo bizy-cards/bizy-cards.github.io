@@ -1,9 +1,1016 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        <p>This is an example of a simple HTML page with one paragraph.</p>
-    </body>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Draw the chart and set the chart values
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Gender', 'Number of people'],
+      ['Male', 51],
+      ['Female', 35],
+    ]);
+
+    var data1 = google.visualization.arrayToDataTable([
+      ['Age', 'Number of people'],
+      ['under 18', 0],
+      ['18-24', 18],
+      ['25-34', 10],
+      ['35-44', 13],
+      ['45-54', 3],
+      ['over 55', 4],
+    ]);
+
+    var data2 = google.visualization.arrayToDataTable([
+      ['Events', 'Number of people'],
+      ['once in a month', 9],
+      ['once in two week', 21],
+      ['once in a week', 13],
+      ['many times a week', 32],
+      ['not so often', 11],
+    ]);
+
+    var data3 = google.visualization.arrayToDataTable([
+      ['What do they want to exchange', 'Number of people'],
+      ['profile picture', 0],
+      ['name and surname', 70],
+      ['phone number', 53],
+      ['email', 25],
+      ['fax', 1],
+      ['company', 34],
+      ['position', 31],
+      ['Facebook', 44],
+      ['LinkedIn', 12],
+      ['Instagram', 30],
+      ['Twitter', 2],
+      ['Skype', 1],
+    ]);
+
+    var data4 = google.visualization.arrayToDataTable([
+      ['Keep', 'Number of people'],
+      ['save info in phone agend', 82],
+      ['note on a piece of paper', 0],
+      ['note on physical agenda', 5],
+      ['ask someone to note for you', 2],
+      ['receive business card', 16],
+      ['memorize them', 4],
+    ]);
+
+    var data5 = google.visualization.arrayToDataTable([
+      ['Difficulites', 'Number of people'],
+      ['forgot to exchange data', 52],
+      ['do not know all participants', 54],
+      ['do not know the host', 14],
+      ['do not know the type of event', 9],
+      ['do not know how formal it is', 25],
+      ['forgot the name of people', 1],
+      ['beer missing', 1],
+      ['people use facebook', 1],
+    ]);
+
+    var data6 = google.visualization.arrayToDataTable([
+      ['What do they want to exchange', 'Number of people'],
+      ['profile picture', 66],
+      ['name and surname', 81],
+      ['phone number', 67],
+      ['email', 61],
+      ['fax', 3],
+      ['company', 54],
+      ['position', 47],
+      ['Facebook', 27],
+      ['LinkedIn', 36],
+      ['Instagram', 19],
+      ['Twitter', 3],
+      ['Skype', 1],
+      ['working experience', 1],
+    ]);
+
+    var data7 = google.visualization.arrayToDataTable([
+      ['Method', 'Number of people'],
+      ['business card', 27],
+      ['speaking', 10],
+      ['mobile app', 56],
+      ['flyer', 3],
+      ['public profile', 43],
+      ['qr', 1],
+    ]);
+
+    var data8 = google.visualization.arrayToDataTable([
+      ['Context', 'Number of people'],
+      ['parties', 50],
+      ['interviews', 47],
+      ['business meetings', 51],
+      ['when you first met a person', 42],
+      ['conferences, volunteering activities', 1],
+      ['meet-ups', 1],
+    ]);
+
+    var data9 = google.visualization.arrayToDataTable([
+      ['Meetings', 'Number of people'],
+      ['0', 20],
+      ['1-5', 37],
+      ['6-15', 9],
+      ['16-25', 7],
+      ['over 25', 13],
+    ]);
+
+    var data10 = google.visualization.arrayToDataTable([
+      ['Business Cards used', 'Number of people'],
+      ['0', 18],
+      ['1-5', 38],
+      ['6-15', 16],
+      ['16-25', 2],
+      ['over 25', 12],
+    ]);
+
+    var data11 = google.visualization.arrayToDataTable([
+      ['What did you do', 'Number of people'],
+      ['stored it', 56],
+      ['went to trash after writing down the info', 24],
+      ['recycle', 14],
+      ['did not get', 3],
+      ['lost it', 1],
+    ]);
+
+    var data12 = google.visualization.arrayToDataTable([
+      ['Aspects', 'Number of people'],
+      ['it makes a person important', 41],
+      ['easy to be used', 44],
+      ['attractive design', 23],
+      ['keeps all the needed info about a person', 52],
+      ['small and easy to store', 43],
+      ['can be kept for a long period', 8],
+      ['accessible price', 16],
+      ['no reason', 1],
+      ['tradition', 1],
+    ]);
+
+    var data13 = google.visualization.arrayToDataTable([
+      ['Disadvantages', 'Number of people'],
+      ['environment pollution', 59],
+      ['can not be associated with a person\'s iamge', 35],
+      ['no relevant information', 4],
+      ['the information can be outdated', 52],
+      ['easy to loose', 3],
+      ['too formal', 1],
+      ['can intimidate other people', 1],
+      ['hard to be managed', 1],
+    ]);
+
+    var data14 = google.visualization.arrayToDataTable([
+      ['What do they want to exchange', 'Number of people'],
+      ['profile picture', 4],
+      ['name and surname', 75],
+      ['phone number', 61],
+      ['email', 60],
+      ['fax', 2],
+      ['company', 55],
+      ['position', 51],
+      ['Facebook', 12],
+      ['LinkedIn', 24],
+      ['Instagram', 2],
+      ['Twitter', 1],
+      ['Skype', 3],
+      ['not the case/not needed', 3],
+    ]);
+
+    var data15 = google.visualization.arrayToDataTable([
+      ['Difficulites', 'Number of people'],
+      ['one of the people did not posses a busines card', 37],
+      ['had to write down the info', 37],
+      ['forgot important aspects about the interlocutor', 50],
+      ['shyness', 1],
+      ['none/not the case', 6],
+    ]);
+
+    var data16 = google.visualization.arrayToDataTable([
+      ['Relevant info', 'Number of people'],
+      ['name and surname', 59],
+      ['phone number', 54],
+      ['email', 43],
+      ['fax', 3],
+      ['company', 39],
+      ['position', 24],
+      ['Facebook', 5],
+      ['LinkedIn', 10],
+      ['Instagram', 2],
+      ['Twitter', 0],
+      ['Skype', 1],
+      ['offered services', 1],
+      ['not the case/not needed', 4],
+    ]);
+
+    var data17 = google.visualization.arrayToDataTable([
+      ['Difficulites', 'Number of people'],
+      ['no relevant info on the business card', 16],
+      ['too many business cards to search into', 35],
+      ['can not find the needed person', 32],
+      ['people changed their contact info', 44],
+      ['people changed their working place', 36],
+      ['not enough time for searching', 27],
+      ['lost cards/people not using them', 4],
+      ['not needed to search/no problems', 6],
+    ]);
+
+    var data18 = google.visualization.arrayToDataTable([
+      ['Sum of money', 'Number of people'],
+      ['0$', 22],
+      ['1-2$', 27],
+      ['3-5$', 14],
+      ['5-10$', 13],
+      ['over 10$', 7],
+      ['as a user 0$, as a developper 10-100$', 2],
+      ['do not trust technology (GDPR)', 1],
+    ]);
+
+      var options1 = {
+        legend: { position: "none" },
+        title: "What is the main information exchanged with a new connection at such an event?"
+      };
+
+      var options2 = {
+        legend: { position: "none" },
+        title: "How do you store new contact\'s data"
+      };
+
+      var options3 = {
+        legend: { position: "none" },
+        title: "Taking part in such events, what are the difficulties you figured?"
+      };
+
+      var options4 = {
+        legend: { position: "none" },
+        title: "What is the main information that a personal profile should include?"
+      };
+
+      var options5 = {
+        legend: { position: "none" },
+        title: "What would be the simplest method to share this custom profile?"
+      };
+
+      var options6 = {
+        legend: { position: "none" },
+        title: "What was the context when you felt the need to share your personal information?"
+      };
+
+      var options7 = {
+        legend: { position: "none" },
+        title: "What did you do with a business card after you received it?"
+      };
+
+      var options8 = {
+        legend: { position: "none" },
+        title: "What do you think are the aspects that users like about business cards?"
+      };
+
+      var options9 = {
+        legend: { position: "none" },
+        title: "What do you think are the disadvantages implied by using business cards?"
+      };
+
+      var options10 = {
+        legend: { position: "none" },
+        title: "What data did you exchange during a business meeting with your interlocutor?"
+      };
+
+      var options11 = {
+        legend: { position: "none" },
+        title: "What were the problems that you spotted during this formal exchange?"
+      };
+
+      var options12 = {
+        legend: { position: "none" },
+        title: "What is the main information you have been looking for in the business cards?"
+      };
+
+      var options13 = {
+        legend: { position: "none" },
+        title: "What problems did you face when you searched in the business cards?"
+      };
+
+      var pie_options1 = {
+        title: "Gender"
+      };
+
+      var pie_options2 = {
+        title: "Age cathegory"
+      };
+
+      var pie_options3 = {
+        title: "How often do you take part into social events? (gatherings, meetings, business meetings)"
+      };
+
+      var pie_options4 = {
+        title: "Number of business meetings you took part:"
+      };
+
+      var pie_options5 = {
+        title: "How many business cards have you used up to now? (yours/received)"
+      };
+
+      var pie_options6 = {
+        title: "How much would you like to pay for an application that can simplify this task?"
+      };
+
+      var view1 = new google.visualization.DataView(data3);
+      var view2 = new google.visualization.DataView(data4);
+      var view3 = new google.visualization.DataView(data5);
+      var view4 = new google.visualization.DataView(data6);
+      var view5 = new google.visualization.DataView(data7);
+      var view6 = new google.visualization.DataView(data8);
+      var view7 = new google.visualization.DataView(data11);
+      var view8 = new google.visualization.DataView(data12);
+      var view9 = new google.visualization.DataView(data13);
+      var view10 = new google.visualization.DataView(data14);
+      var view11 = new google.visualization.DataView(data15);
+      var view12 = new google.visualization.DataView(data16);
+      var view13 = new google.visualization.DataView(data17);
+
+      var chart1 = new google.visualization.BarChart(document.getElementById("chart1"));
+      chart1.draw(view1, options1);
+      var chart2 = new google.visualization.BarChart(document.getElementById("chart2"));
+      chart2.draw(view2, options2);
+      var chart3 = new google.visualization.BarChart(document.getElementById("chart3"));
+      chart3.draw(view3, options3);
+      var chart4 = new google.visualization.BarChart(document.getElementById("chart4"));
+      chart4.draw(view4, options4);
+      var chart5 = new google.visualization.BarChart(document.getElementById("chart5"));
+      chart5.draw(view5, options5);
+      var chart6 = new google.visualization.BarChart(document.getElementById("chart6"));
+      chart6.draw(view6, options6);
+      var chart7 = new google.visualization.BarChart(document.getElementById("chart7"));
+      chart7.draw(view7, options7);
+      var chart8 = new google.visualization.BarChart(document.getElementById("chart8"));
+      chart8.draw(view8, options8);
+      var chart9 = new google.visualization.BarChart(document.getElementById("chart9"));
+      chart9.draw(view9, options9);
+      var chart10 = new google.visualization.BarChart(document.getElementById("chart10"));
+      chart10.draw(view10, options10);
+      var chart11 = new google.visualization.BarChart(document.getElementById("chart11"));
+      chart11.draw(view11, options11);
+      var chart12 = new google.visualization.BarChart(document.getElementById("chart12"));
+      chart12.draw(view12, options12);
+      var chart13 = new google.visualization.BarChart(document.getElementById("chart13"));
+      chart13.draw(view13, options13);
+
+      var piechart1 = new google.visualization.PieChart(document.getElementById('piechart1'));
+      piechart1.draw(data, pie_options1);
+      var piechart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
+      piechart2.draw(data1, pie_options2);
+      var piechart3 = new google.visualization.PieChart(document.getElementById('piechart3'));
+      piechart3.draw(data2, pie_options3);
+      var piechart4 = new google.visualization.PieChart(document.getElementById('piechart4'));
+      piechart4.draw(data9, pie_options4);
+      var piechart5 = new google.visualization.PieChart(document.getElementById('piechart5'));
+      piechart5.draw(data10, pie_options5);
+      var piechart6 = new google.visualization.PieChart(document.getElementById('piechart6'));
+      piechart6.draw(data18, pie_options6);
+    }
+    </script>
+  </head>
+  <title>Bizy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <style>
+    /******************
+    General
+    *******************/
+    div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    }
+    div.gallery:hover {
+    border: 1px solid #777;
+    }
+    div.gallery img {
+    width: 100%;
+    height: auto;
+    }
+    div.desc {
+    padding: 15px;
+    text-align: center;
+    }
+    body,h2,h3,h4,h5,h6 {font-family: "Rubik", sans-serif;}
+    body, html{
+    height: 100%;
+    /* background-color: #b3ccff; */
+    background-image: url("./resources/cards.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #442C2E;
+    line-height: 1.8;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    }
+    *, *:before, *:after {
+    box-sizing: inherit;
+    }
+    p {
+    text-align: justify;
+    font-size: 1.2em;
+    color: rgb(92, 92, 92);
+    }
+    .heading1 {
+    font-size: 2em;
+    font-weight: bold;
+    }
+    .w3-container {
+    background-color: rgb(255, 251, 250);
+    margin-top: 4em;
+    padding: 5em;
+    }
+    .container-cut {
+    clip-path: 
+    inset(5px round 20px);
+    }
+    .milestone {
+    font-size: 15px;
+    color: #94b8b8;
+    }
+    /******************
+    Background
+    *******************/
+    .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5, .bgimg-6, .bgimg-7, .bgimg-8 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    .bgimg-1 {
+    background-image: url("./resources/bg.jpg");
+    background-size: cover;
+    min-height: 100%;
+    }
+    /******************
+    Navigation
+    *******************/
+    .home-nav {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: -1;
+    }
+    .w3-top {
+    z-index:10;
+    background-color: #4d88ff;
+    font-size: 1.25em;
+    color: #442C2E;
+    }
+    .w3-bar {
+    -moz-box-shadow:    inset 0 0 10px rgb(131, 86, 86);
+    -webkit-box-shadow: inset 0 0 10px rgb(179, 255, 179)
+    box-shadow:         inset 0 0 10px rgb(179, 255, 179)
+    }
+    .w3-card {
+    box-shadow: none !important;
+    }
+    .w3-white {
+    background-color: #4d88ff !important;
+    }
+    .navbar-item {
+    padding-top: 10px;
+    font-size: 1.25em;
+    color: #442C2E;
+    }
+    .navbar-item:hover, .navbar-item:active {
+    background-color: transparent !important;
+    color: #442C2E;
+    }
+    .navbar-item text {
+    font-size: 0.8em;
+    fill: #442C2E;
+    }
+    .navbar-item:hover circle, .navbar-item:active circle{
+    stroke: rgb(179, 255, 179)
+    }
+    .button-item {
+    padding-top: 10px;
+    font-size: 1.25em;
+    background-color: #4d88ff;
+    }
+    .button-item:hover, .button-item:active {
+    color: #442C2E;
+    }
+    .button-item text {
+    font-size: 1em;
+    fill: #442C2E;
+    }
+    .button-item:hover circle, .button-item:active circle{
+    stroke: rgb(179, 255, 179)
+    }
+    .rest-nav {
+    margin-top: 0.5em;
+    }
+    /******************
+    Home Section
+    *******************/
+    #home {
+    font-size: 5em;
+    }
+    .w3-hover-opacity {cursor: pointer;}
+    @media only screen and (max-device-width: 1600px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+    }
+    }
+    ul {
+    padding-left: 0;
+    counter-reset: index;  
+    }
+    li {
+    counter-increment: index; 
+    display: flex;
+    align-items: center;
+    color: rgb(92, 92, 92);
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+    /******************
+    Competition Img
+    *******************/
+    .questionnaire-img {
+    width: 70%;
+    height: 70%;
+    }
+    .column {
+    float: left;
+    width: 33%;
+    padding: 5px;
+    }
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .column_wireframe {
+    float: left;
+    width: 50%;
+    }
+    /******************
+    Team
+    *******************/
+    .column_1 {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    }
+    .column_2 {
+    float: left;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    }
+    @media screen and (max-width: 650px) {
+    .column_1 {
+    width: 100%;
+    display: block;
+    }
+    }
+    .card_1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .container_1 {
+    padding: 0 16px;
+    }
+    .container_1::after, .row_1::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .title_1 {
+    color: grey;
+    }
+    .button_1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    }
+    .button_1:hover {
+    background-color: #555;
+    }
+    /******************
+    Further
+    *******************/
+    hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid rgb(92, 92, 92);
+    margin: 1em 0;
+    padding: 0;
+    }
+    /***
+    TIMELINE
+    ***/
+    .timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+    }
+    .timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-image: url("./resources/bricks.jpeg");;
+    left: 35%;
+    margin-left: -1.5px;
+    }
+    .timeline > li {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    }
+    .timeline > li:before,
+    .timeline > li:after {
+    content: " ";
+    display: table;
+    }
+    .timeline > li:after {
+    clear: both;
+    }
+    .timeline > li:before,
+    .timeline > li:after {
+    content: " ";
+    display: table;
+    }
+    .timeline > li:after {
+    clear: both;
+    }
+    .timeline > li > .timeline-panel {
+    background-color: #b3ccff;;
+    width: 30%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    }
+    .timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+    }
+    .timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+    }
+    .timeline > li > .timeline-badge {
+    color: #000;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 35%;
+    margin-left: -25px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    }
+    .timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+    left: -30%;
+    }
+    .timeline > li.timeline-inverted > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+    }
+    .timeline > li.timeline-inverted > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+    }
+    .timeline-badge.primary {
+    background-color: #f3e5f5 !important;
+    }
+    .timeline-badge.success {
+    background-color: #fce4ec !important;
+    }
+    .timeline-badge.warning {
+    background-color: #ffcdd2 !important;
+    }
+    .timeline-badge.danger {
+    background-color: #f8bdd0 !important;
+    }
+    .timeline-badge.info {
+    background-color: #ef9a9a !important;
+    }
+    .timeline-title {
+    margin-top: 0;
+    color: inherit;
+    }
+    .timeline-body > p,
+    .timeline-body > ul {
+    margin-bottom: 0;
+    }
+    .timeline-body > p + p {
+    margin-top: 5px;
+    }
+    a:hover {
+    text-decoration: none;
+    }
+  </style>
+  <body>
+    <div class="w3-top">
+      <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-left" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+        </a>
+        <div class="home-nav w3-left w3-hide-medium w3-hide-small" style="display:block; margin: 0 auto;">
+          <svg width="140" height="54" class="navbar-item">
+            <a href="#home">
+              <circle cx="70"
+                cy="23"
+                r="15"
+                stroke="transparent" stroke-width="5"
+                fill="none"
+                />
+              <text x="70" y="25"
+                text-anchor="middle"
+                alignment-baseline="middle">
+                HOME
+              </text>
+            </a>
+          </svg>
+        </div>
+        <div class="rest-nav w3-right w3-hide-medium w3-hide-small" style="display:block; margin: 0 auto;">
+            <svg width="80" height="50" class="navbar-item">
+              <a href="#contact">
+                <circle cx="40"
+                  cy="25"
+                  r="12"
+                  stroke="transparent" stroke-width="5"
+                  fill="none"
+                  />
+                <text x="40" y="25"
+                  text-anchor="middle"
+                  alignment-baseline="middle">
+                  TEAM
+                </text>
+              </a>
+            </svg>
+        </div>
+        <div class="rest-nav w3-right w3-hide-medium w3-hide-small" style="display:block; margin: 0 auto;">
+            <svg width="200" height="50" class="navbar-item">
+              <a href="#news">
+                <circle cx="100"
+                  cy="25"
+                  r="12"
+                  stroke="transparent" stroke-width="5"
+                  fill="none"
+                  />
+                <text x="100" y="25"
+                  text-anchor="middle"
+                  alignment-baseline="middle">
+                  NEWSLETTER
+                </text>
+              </a>
+            </svg>
+        </div>
+        <div class="rest-nav w3-right w3-hide-medium w3-hide-small" style="display:block; margin: 0 auto;">
+          <svg width="200" height="50" class="navbar-item">
+            <a href="#wireframe">
+              <circle cx="100"
+                cy="25"
+                r="12"
+                stroke="transparent" stroke-width="5"
+                fill="none"
+                />
+              <text x="100" y="25"
+                text-anchor="middle"
+                alignment-baseline="middle">
+                WIREFRAME
+              </text>
+            </a>
+          </svg>
+        </div>
+        <div class="rest-nav w3-right w3-hide-medium w3-hide-small" style="display:block; margin: 0 auto;">
+            <svg width="200" height="50" class="navbar-item">
+              <a href="#aboutus">
+                <circle cx="100"
+                  cy="25"
+                  r="12"
+                  stroke="transparent" stroke-width="5"
+                  fill="none"
+                  />
+                <text x="100" y="25"
+                  text-anchor="middle"
+                  alignment-baseline="middle">
+                  LEARN ABOUT US
+                </text>
+              </a>
+            </svg>
+        </div>
+      </div>
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">TEAM</a>
+        <a href="#wireframe" class="w3-bar-item w3-button" onclick="toggleFunction()">WIREFRAME</a>
+      </div>
+    </div>
+    <div class="bgimg-1 w3-display-container" id="home">
+      <div class="w3-display-middle" style="white-space:nowrap;">
+      </div>
+    </div>
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64 container-cut" id="aboutus">
+        <div class="heading1"> Learn about us</div>
+    </div>
+    <div class="w3-content w3-container w3-padding-64 container-cut" id="wireframe">
+      <div class="container">
+        <div class="heading1">Wireframe</div>
+        <ul <!--class="timeline"--> >
+          <li>
+            Images left-to-right
+            <!-- <div class="timeline-badge primary"><img src="./resources/paper.png" style="height:40px"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title"><em><b>Project Description</b></em></h4>
+              </div>
+              <div class="timeline-body">
+                <p><b>Deadline: 19 October 2020</b></p>
+                <p><i>Bizy: all you need to know about us </i></p>
+                <svg width="140" height="54" class="button-item">
+                  <a href="#milestone1">
+                    <circle cx="70"
+                      cy="23"
+                      r="15"
+                      stroke="transparent" stroke-width="5"
+                      fill="none"
+                      />
+                    <text x="70" y="25"
+                      text-anchor="middle"
+                      alignment-baseline="middle">
+                      Read More
+                    </text>
+                  </a>
+                </svg>
+              </div>
+            </div> -->
+          </li>
+          <li <!--class="timeline-inverted"--> >
+            Images left-to-right
+            <!-- <div class="timeline-badge primary"><img src="./resources/check.png" style="height:40px"></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="timeline-title"><em><b>Problem&Idea validation</b></em></h4>
+              </div>
+              <div class="timeline-body">
+                <p><b>Deadline: 2 November 2020</b></p>
+                <p><i>Discovering our customers</i></p>
+                <svg width="140" height="54" class="button-item">
+                  <a href="#milestone2">
+                    <circle cx="70"
+                      cy="23"
+                      r="15"
+                      stroke="transparent" stroke-width="5"
+                      fill="none"
+                      />
+                    <text x="70" y="25"
+                      text-anchor="middle"
+                      alignment-baseline="middle">
+                      Read More
+                    </text>
+                  </a>
+                </svg>
+              </div>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-content w3-container w3-padding-64 container-cut" id="news">
+        <div class="heading1">Newsletter</div>
+    </div>
+    <div class="w3-content w3-container w3-padding-64 container-cut" id="contact">
+      <div class="heading1">Our Team</div>
+      <div class="row_1">
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/bf.jpg" alt="Bogdan" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Bogdan-Cristian FIRU&#354;I</h2>
+              <p class="title_1">Project Manager</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:firutibogdan@gmail.com');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/im.jpg" alt="Ionut" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Ionu&#539; <br>MIHALACHE</h2>
+              <p class="title_1">Back-End Developer</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:ipopescu46@gmail.com');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/vv.jpg" alt="Vlad" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Vlad-Lauren&#539;iu-Florin VR&#258;JITORU</h2>
+              <p class="title_1">Back-End Developer</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:vladflorinvrajitoru@gmail.com');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row_1">
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/po.jpg" alt="Paul" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Paul-Stelian <br> OLARU</h2>
+              <p class="title_1">Full Stack Developer</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:paul_stelian.olaru@stud.acs.upb.ro');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/cs.jpg" alt="Cristin" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Cristin <br> S&#206;RBU</h2>
+              <p class="title_1">Front-End Developer</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:cristinsirbu@gmail.com');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+        <div class="column_1">
+          <div class="card_1">
+            <img src="./resources/sc.jpg" alt="Serban" style="width:100%">
+            <div class="container_1">
+              <h3>
+              Daniel-	&#350;erban COZMA</h2>
+              <p class="title_1">Front-End Developer</p>
+              <p></p>
+              <p><button class="button_1" onclick="window.open('mailto:cozmaserban@icloud.com');">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
 </html>
