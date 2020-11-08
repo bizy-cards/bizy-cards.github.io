@@ -253,119 +253,144 @@
 <style>
 
 .timeline {
-    border-left: 3px solid #727cf5;
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px;
-    background: rgba(114, 124, 245, 0.09);
-    margin: 0 auto;
-    letter-spacing: 0.2px;
-    position: relative;
-    line-height: 1.4em;
-    font-size: 1.03em;
-	min-width: 300px;
-    padding: 50px;
-    list-style: none;
-    text-align: left;
-    max-width: 40%;
+  list-style: none;
+  padding: 20px 0 20px;
+  position: relative;
+}
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eeeeee;
+  left: 50%;
+  margin-left: -1.5px;
+}
+.timeline > li {
+  margin-bottom: 20px;
+  position: relative;
+  max-width: 300px;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  width: 50%;
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 20px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+.timeline > li.timeline-inverted + li:not(.timeline-inverted),
+.timeline > li:not(.timeline-inverted) + li.timeline-inverted {
+margin-top: -300px;
 }
 
-@media (max-width: 767px) {
-    .timeline {
-        max-width: 98%;
-        padding: 25px;
-    }
+.timeline > li:not(.timeline-inverted) {
+padding-right:90px;
 }
 
-.timeline h1 {
-    font-weight: 300;
-    font-size: 1.4em;
+.timeline > li.timeline-inverted {
+padding-left:90px;
+right: -52%;
 }
-
-.timeline h2,
-.timeline h3 {
-    font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 10px;
+.timeline > li > .timeline-panel:before {
+  position: absolute;
+  top: 26px;
+  right: -15px;
+  display: inline-block;
+  border-top: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 15px solid transparent;
+  content: " ";
 }
-
-.timeline .event {
-    border-bottom: 1px dashed #e8ebf1;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-    position: relative;
+.timeline > li > .timeline-panel:after {
+  position: absolute;
+  top: 27px;
+  right: -14px;
+  display: inline-block;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 14px solid transparent;
+  content: " ";
 }
-
-@media (max-width: 767px) {
-    .timeline .event {
-        padding-top: 30px;
-    }
+.timeline > li > .timeline-badge {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  margin-left: -25px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
 }
-
-.timeline .event:last-of-type {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border: none;
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
 }
-
-.timeline .event:before,
-.timeline .event:after {
-    position: absolute;
-    display: block;
-    top: 0;
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
 }
-
-.timeline .event:before {
-    left: -207px;
-    content: attr(data-date);
-    text-align: right;
-    font-weight: 100;
-    font-size: 0.9em;
-    min-width: 120px;
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
 }
-
-@media (max-width: 767px) {
-    .timeline .event:before {
-        left: 0px;
-        text-align: left;
-    }
+.timeline-badge.primary {
+  background-color: #2e6da4 !important;
 }
-
-.timeline .event:after {
-    -webkit-box-shadow: 0 0 0 3px #727cf5;
-    box-shadow: 0 0 0 3px #727cf5;
-    left: -55.8px;
-    background: #fff;
-    border-radius: 50%;
-    height: 9px;
-    width: 9px;
-    content: "";
-    top: 5px;
+.timeline-badge.success {
+  background-color: #3f903f !important;
 }
-
-@media (max-width: 767px) {
-    .timeline .event:after {
-        left: -31.8px;
-    }
+.timeline-badge.warning {
+  background-color: #f0ad4e !important;
 }
-
-.rtl .timeline {
-    border-left: 0;
-    text-align: right;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
-    border-right: 3px solid #727cf5;
+.timeline-badge.danger {
+  background-color: #d9534f !important;
 }
-
-.rtl .timeline .event::before {
-    left: 0;
-    right: -170px;
+.timeline-badge.info {
+  background-color: #5bc0de !important;
 }
-
-.rtl .timeline .event::after {
-    left: 0;
-    right: -55.8px;
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 5px;
 }
 </style>
 
@@ -472,11 +497,11 @@
 										<h3>Welcoming interface</h3>
 										<img src="./resources/login.png" width="110%">
 									</li>
-									<li>
+									<li class="timeline-inverted">
 										<h3>Data protection</h3>
 										<img src="./resources/protection.png" width="110%">
-                  </li>
-                  <li>
+                                    </li>
+                                    <li>
 										<h3>Discover others</h3>
 										<img src="./resources/connect.png" width="110%">
 									</li>
